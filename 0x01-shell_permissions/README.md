@@ -1,0 +1,1 @@
+Shell and linux permissions
