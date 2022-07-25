@@ -13,6 +13,6 @@ echo "$j"
 j=$((j + 1))
 done
 i=$((i + 1))
-j=0
+j=1
 done
 
