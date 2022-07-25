@@ -17,7 +17,7 @@ case $i in
 
 	17)
 	echo "$i"
-	echo "bad luck from italy"
+	echo "bad luck from Italy"
 	;;
 
 	*)
