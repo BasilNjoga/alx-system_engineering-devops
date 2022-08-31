@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This pings an ip address
+ping -n 5
