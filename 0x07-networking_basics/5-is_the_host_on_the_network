@@ -2,7 +2,7 @@
 #This pings an ip address
 if [[ $1 ]]
 then
-	ping 8.8.8.8 -n 5
+	ping $1 -n 5
 else
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 fi
