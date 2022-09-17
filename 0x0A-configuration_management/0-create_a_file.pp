@@ -1,3 +1,5 @@
+#this manifest creates a file in tmp
+
 node default {
 
 file { '/tmp/school' 
