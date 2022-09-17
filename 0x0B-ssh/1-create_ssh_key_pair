@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This scirpts creates and RSA key valuepair
+
+ssh-keygen -b 4096
