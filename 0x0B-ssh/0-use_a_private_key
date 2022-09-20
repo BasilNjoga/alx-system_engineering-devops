@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This is a script that connects to a server using a private ke
 
-ssh @remote_host 
+ssh ubuntu@3.235.242.19
