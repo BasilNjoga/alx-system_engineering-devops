@@ -1,0 +1,3 @@
+#!/bin/bash
+# This script configers a server to allow connection without a password
+ssh-copy-id -i ~/.ssh/school
