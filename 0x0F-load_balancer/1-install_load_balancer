@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 #This is installs and configures HAproxy
-sudo apt-get -y install haproxy=2.0.\*
+sudo apt-get -y install haproxy
+sudo echo "listen firstbalance
+        bind *:80
+        balance roundrobin
+        option forwardfor
+        option httpchk
+        server webserver1 Your-Webserver1-IP:80 check
+        server webserver2 Your-Webserver2-IP:80 check" >> /etc/haproxy/haproxy.cfg
