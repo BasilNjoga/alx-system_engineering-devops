@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-""" This script fetches a RESTapi and gets a response """
-
+""" This is a file on calling data from a rest api """
 import requests
-
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
+response = requests.get('https://jsonplaceholder.typicode.com/todos/1')
+print(response.text)
