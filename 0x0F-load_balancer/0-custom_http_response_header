@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 #This is a script that creates a custom header
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo bash -c 'echo "Hello World!" >> /var/www/html/index.html'
+sudo service nginx start
 add_header X-Served-By web-01
