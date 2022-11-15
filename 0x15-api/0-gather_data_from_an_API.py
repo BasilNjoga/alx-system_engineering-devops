@@ -3,12 +3,22 @@
 import requests
 from sys import argv
 
-users = "https://jsonplaceholder.typicode.com/users"
+theid = argv[1]
+url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
 todos = requests.get('https://jsonplaceholder.typicode.com/todos')
-users = requests.get(f"https://jsonplaceholder.typicode.com/users/1")
+users = requests.get(url)
+tasks = 0
+complete = 0
 
 data = users.json()
-print(data)
-print(users)
-print(data["name"])
-#print("Employee {} is done with".format(data['name']))
+numbers = todos.json()
+for obj in numbers:
+    if obj['userId'] == 1:
+        tasks = tasks + 1
+        if obj['completed'] == True:
+            complete = complete + 1
+print(theid)
+print("Employee {} is done with tasks ({}/{}):".format(data['name'], complete, tasks))
+for obj in numbers:
+    if ((obj['userId'] == 1) & (obj['completed'] == True)):
+            print("\t {}".format(obj['title']))
