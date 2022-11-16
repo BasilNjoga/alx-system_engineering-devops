@@ -20,5 +20,5 @@ if __name__ == "__main__":
                 complete = complete + 1
     """ prints out data """
     newout = ""
-    #newout = (f"Employee {data['name']} is done with tasks")
-    #print(out + "({}/{}):".format(complete, tasks))
+    newout = ("Employee {} is done with tasks".format(data['name']))
+    print(out + "({}/{}):".format(complete, tasks))
