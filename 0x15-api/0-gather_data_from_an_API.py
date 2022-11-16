@@ -22,3 +22,6 @@ if __name__ == "__main__":
     newout = ""
     newout = ("Employee {} is done with tasks".format(data['name']))
     print(out + "({}/{}):".format(complete, tasks))
+    for obj in numbers:
+        if ((obj['userId'] == theid) & (obj['completed'] is True)):
+            print("\t {}".format(obj['title']))
