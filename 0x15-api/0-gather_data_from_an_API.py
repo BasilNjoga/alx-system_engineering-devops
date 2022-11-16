@@ -12,3 +12,10 @@ if __name__ == "__main__":
     complete = 0
     data = users.json()
     numbers = todos.json()
+    for obj in numbers:
+        if obj['userId'] == theid:
+            tasks = tasks + 1
+            if obj['completed'] is True:
+                complete = complete + 1
+    out = f"Employee {data['name']} is done with tasks "
+    print(out + "({}/{}):".format(complete, tasks))
