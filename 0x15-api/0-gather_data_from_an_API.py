@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" This is a scirpt that calls from a REST API"""
 import requests
 from sys import argv
 
