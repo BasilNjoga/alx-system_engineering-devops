@@ -13,16 +13,18 @@ if __name__ == "__main__":
     data = users.json()
     numbers = todos.json()
 
-    fname = theid + ".csv"
+    fname = argv[1] + ".csv"
     data_file = open(fname, 'w', newline='')
     csv_writer = csv.writer(data_file)
 
+    count = 0
     for obj in numbers:
-        if count == 0:
-            header = obj.keys()
-            csv_writer.writerow(header)
-            count += 1
-        csv_writer.writerow(data.values())
+        if obj['userId'] == theid:
+            if count == 0:
+                header = obj.keys('userId')
+                csv_writer.writerow(header)
+                count += 1
+            csv_writer.writerow(data.values())
     data_file.close
         
 
