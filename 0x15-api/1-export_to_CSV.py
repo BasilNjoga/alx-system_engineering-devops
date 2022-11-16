@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This scirpt exports data in csv format"""
-import csv
+from flatten_json import flatten
+import json, pandas
 import requests
 from sys import argv
 
@@ -14,18 +15,12 @@ if __name__ == "__main__":
     numbers = todos.json()
 
     fname = argv[1] + ".csv"
-    data_file = open(fname, 'w', newline='')
-    csv_writer = csv.writer(data_file)
-
-    count = 0
-    for obj in numbers:
-        if obj['userId'] == theid:
-            if count == 0:
-                header = obj.keys('userId')
-                csv_writer.writerow(header)
-                count += 1
-            csv_writer.writerow(data.values())
-    data_file.close
-        
-
+    key_list = ['userId', 'completed', 'title']
+    numbers = [{k:d[k] for k in key_list} for d in numbers]
     
+    # Flatten and convert to a data frame
+    json_list_flattened = (flatten(d, '.') for d in json_list)
+    df = pandas.DataFrame(json_list_flattened)
+    
+    # Export to CSV in the same directory with the original file name
+    export_csv = df.to_csv (fname, sep=',', encoding='utf-8', index=None, header=True)
