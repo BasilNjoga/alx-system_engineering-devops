@@ -19,8 +19,8 @@ if __name__ == "__main__":
             if obj['completed'] is True:
                 complete = complete + 1
     """ prints out data """
-    newout = ""
-    newout = ("Employee {} is done with tasks".format(data['name']))
+    out = ""
+    out = ("Employee {} is done with tasks".format(data['name']))
     print(out + "({}/{}):".format(complete, tasks))
     for obj in numbers:
         if ((obj['userId'] == theid) & (obj['completed'] is True)):
