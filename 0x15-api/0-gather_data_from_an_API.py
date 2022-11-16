@@ -17,10 +17,10 @@ if __name__ == "__main__":
     for obj in numbers:
         if obj['userId'] == theid:
             tasks = tasks + 1
-            if obj['completed'] == True:
+            if obj['completed'] is True:
                 complete = complete + 1
-    print(theid)
-    print("Employee {} is done with tasks ({}/{}):".format(data['name'], complete, tasks))
+    out = f"Employee {data['name']} is done with tasks "
+    print(out + "({}/{}):".format(complete, tasks))
     for obj in numbers:
-        if ((obj['userId'] == theid) & (obj['completed'] == True)):
+        if ((obj['userId'] == theid) & (obj['completed'] is True)):
             print("\t {}".format(obj['title']))
