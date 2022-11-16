@@ -6,7 +6,7 @@ from sys import argv
 if __name__ == "__main__":
     """This calls from a rest api and displays ouput"""
 
-    theid = int(argv[1])
+    theid = argv[1]
     url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     users = requests.get(url)
