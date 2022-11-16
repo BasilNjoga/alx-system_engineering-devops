@@ -17,5 +17,5 @@ if __name__ == "__main__":
             tasks = tasks + 1
             if obj['completed'] is True:
                 complete = complete + 1
-    out = f"Employee {data['name']} is done with tasks "
-    print(out + "({}/{}):".format(complete, tasks))
+    #out = f"Employee {data['name']} is done with tasks"
+    #print(out + "({}/{}):".format(complete, tasks))
