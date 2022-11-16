@@ -4,6 +4,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
+    """ runs only when function is called """
     theid = int(argv[1])
     url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
