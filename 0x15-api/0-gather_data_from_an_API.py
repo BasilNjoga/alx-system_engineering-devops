@@ -8,3 +8,7 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     users = requests.get(url)
+    tasks = 0
+    complete = 0
+    data = users.json()
+    numbers = todos.json()
