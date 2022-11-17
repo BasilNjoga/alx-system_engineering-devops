@@ -32,7 +32,7 @@ if __name__ == "__main__":
         values.clear()
 
     out = dict.fromkeys(argv[1], taskslist)
-    json_object = json.dumps(out, indent=4)
+    json_object = json.dumps(out)
 
     with open(filename, "w") as outfile:
         outfile.write(json_object)
