@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     username = usersdata.json().get('username')
     filename = argv[1] + ".json"
-    keys = ['tasks', 'completed', 'username']
+    keys = ['task', 'completed', 'username']
     completed = []
     title = []
     taskslist = []
