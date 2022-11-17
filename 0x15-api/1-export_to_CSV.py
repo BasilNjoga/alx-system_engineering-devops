@@ -8,9 +8,8 @@ import sys
 if __name__ == "__main__":
     """ This file exports a csv file """
     employee_id = sys.argv[1]
-    user_response = requests.get(
-            f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-            )
+    url = "https://jsonplaceholder.typicode.com/users/" + employee_id
+    user_response = requests.get(url)
     todos_response = requests.get(
             "https://jsonplaceholder.typicode.com/todos/"
             )
