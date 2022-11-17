@@ -13,9 +13,11 @@ if __name__ == "__main__":
 
     username = usersdata.json().get('username')
     filename = argv[0] + ".json"
-
+    completed = []
+    title = []
     for obj in todos.json():
         if obj.get('userId') == int(argv[0]):
-            thisdict = dict.fromkeys('task',obj.get('title'))
-
-    print(thisdict)
+            comleted.append(obj.get('completed'))
+            title.append(obj.get('title'))
+    print(title)
+    print(completed)
