@@ -35,9 +35,9 @@ if __name__ == "__main__":
             taskslist.append(dict(zip(keys, values)))
             values.clear()
         alllist.append(taskslist)
-    count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    out = dict(zip(nums, allist))
-    json_object = json.dumps()
+    nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    out = dict(zip(nums, alllist))
+    json_object = json.dumps(out)
 
     with open(filename, "w") as outfile:
         outfile.write(json_object)
