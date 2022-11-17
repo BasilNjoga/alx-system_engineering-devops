@@ -8,16 +8,20 @@ if __name__ == "__main__":
     """ This exports a list in json format """
 
     url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
-    todos = request.get("https://jsonplaceholder.typicode.com/todos/")
-    usersdata = request.get(url)
+    todos = requests.get("https://jsonplaceholder.typicode.com/todos/")
+    usersdata = requests.get(url)
 
     username = usersdata.json().get('username')
-    filename = argv[0] + ".json"
+    filename = argv[1] + ".json"
+    keys = ['tasks', 'completed', 'username']
     completed = []
     title = []
+    taskslist = []
     for obj in todos.json():
-        if obj.get('userId') == int(argv[0]):
-            comleted.append(obj.get('completed'))
+        if obj.get('userId') == int(argv[1]):
+            completed.append(obj.get('completed'))
             title.append(obj.get('title'))
     print(title)
     print(completed)
+    for count in range(len(title)):
+        tasklist[count] = dict(zip(keys, title
