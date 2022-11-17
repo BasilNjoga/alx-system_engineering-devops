@@ -18,21 +18,20 @@ if __name__ == "__main__":
     title = []
     taskslist = []
     alllist = []
+    for new in usersdata.json():
+        names.append(new['username'])
 
     for full in range(10):
         for obj in todos.json():
             if obj.get('userId') == full:
                 completed.append(obj.get('completed'))
                 title.append(obj.get('title'))
-        for new in usersdata.json():
-            if new.get('id') == full:
-                names.append(new.get('username'))
         values = []
         for count in range(len(title)):
             for i in range(3):
                 values.append(title[count])
                 values.append(completed[count])
-                values.append(names[count])
+                values.append(names[full])
             taskslist.append(dict(zip(keys, values)))
             values.clear()
         allist.append(taskslist)
