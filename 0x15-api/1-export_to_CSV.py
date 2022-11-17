@@ -10,10 +10,10 @@ if __name__ == "__main__":
     employee_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com/users/" + employee_id
     user_response = requests.get(url)
-    todos_response = requests.get("https://jsonplaceholder.typicode.com/todos/")
+    todos_response = requests.get("https://jsonplaceholder.typicode.com/toidos/")
 
-    employee_name = user_response.json().get('name')
-
+    employee_name = user_response.json().get('username')
+    print(employee_name)
     filename = employee_id + '.csv'
     with open(filename, 'a') as file:
         csv_writer = csv.writer(file, delimiter=',', quotechar='"',
