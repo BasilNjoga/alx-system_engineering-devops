@@ -20,21 +20,22 @@ if __name__ == "__main__":
     alllist = []
 
     for full in range(10):
-    for obj in todos.json():
-        if obj.get('userId') == int(argv[1]):
-            completed.append(obj.get('completed'))
-            title.append(obj.get('title'))
-    values = []
-    for count in range(len(title)):
-        for i in range(3):
-            values.append(title[count])
-            values.append(completed[count])
-            values.append(username)
-        taskslist.append(dict(zip(keys, values)))
-        values.clear()
-
-    out = dict.fromkeys(argv[1], taskslist)
-    json_object = json.dumps(out)
+        for obj in todos.json():
+            if obj.get('userId') == int(argv[1]):
+                completed.append(obj.get('completed'))
+                title.append(obj.get('title'))
+        values = []
+        for count in range(len(title)):
+            for i in range(3):
+                values.append(title[count])
+                values.append(completed[count])
+                values.append(username)
+            taskslist.append(dict(zip(keys, values)))
+            values.clear()
+        allist.append(taskslist)
+    count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    out = dict(zip(nums, allist))
+    json_object = json.dumps()
 
     with open(filename, "w") as outfile:
         outfile.write(json_object)
