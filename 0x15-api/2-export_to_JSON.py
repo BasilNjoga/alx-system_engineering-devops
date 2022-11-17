@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This exports a file in json format """
 
+import json
 import requests
 from sys import argv
 
@@ -21,7 +22,17 @@ if __name__ == "__main__":
         if obj.get('userId') == int(argv[1]):
             completed.append(obj.get('completed'))
             title.append(obj.get('title'))
-    print(title)
-    print(completed)
+    values = []
     for count in range(len(title)):
-        tasklist[count] = dict(zip(keys, title
+        for i in range(3):
+            values.append(title[count])
+            values.append(completed[count])
+            values.append(username)
+        taskslist.append(dict(zip(keys, values)))
+        values.clear()
+
+    out = dict.fromkeys(argv[1], taskslist)
+    json_object = json.dumps(out, indent=4)
+
+    with open(filename, "w") as outfile:
+        outfile.write(json_object)
