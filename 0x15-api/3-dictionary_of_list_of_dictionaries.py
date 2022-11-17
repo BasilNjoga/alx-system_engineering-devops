@@ -11,8 +11,8 @@ if __name__ == "__main__":
     todos = requests.get("https://jsonplaceholder.typicode.com/todos/")
     usersdata = requests.get(url)
 
-    filename = "todo_all_employess.json"
-    keys = ['task', 'completed', 'username']
+    filename = "todo_all_employees.json"
+    keys = ['username', 'task', 'completed']
     names = []
     completed = []
     title = []
@@ -29,9 +29,9 @@ if __name__ == "__main__":
         values = []
         for count in range(len(title)):
             for i in range(3):
-                values.append(title[count])
-                values.append(completed[count])
                 values.append(names[full])
+                values.append(title[count])
+                values.append(completed[full])
             taskslist.append(dict(zip(keys, values)))
             values.clear()
         alllist.append(taskslist)
