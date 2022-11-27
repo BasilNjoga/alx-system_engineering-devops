@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #This is a script displaying "Best School" 10 times
-for i in {1..10}; do echo "Best School"; done
-
+for ((n=0;n<10;n++)); do
+echo "Best School"
+done
