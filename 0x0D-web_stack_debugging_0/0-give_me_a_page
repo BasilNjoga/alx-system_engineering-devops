@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-#This is a script that corrects stuff 
-echo "Hello Holberton"
+#This is a script that corrects an apache server
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+service apache2 restart
